@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parks and Recreation SQL Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Parks and Recreation SQL Project</h1>
+      <p>Advanced SQL Analysis on Employee and Salary Data</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container content-wrapper">
+      <div class="text-content">
+        <h2>Project Overview</h2>
+        <p>This SQL project analyzes employee demographics, salary distributions, departmental bonuses, and classification logic within the Parks and Recreation department. Using Common Table Expressions, joins, window functions, and conditional logic, key business insights were extracted.</p>
+
+        <h2>Data Models</h2>
+        <ul class="data-models">
+         <li><strong>employee_demographics:</strong> Stores personal details like name, age, gender, and birth date.</li>
+         <li><strong>employee_salary:</strong> Contains job roles, salary figures, and department links.</li>
+            <li><strong>parks_departments:</strong> Maps department IDs to department names.</li>
+        </ul>
+
+
+        <h2>Queries and Results</h2>
+        <ul>
+          <li><strong style="color: black;">employee_labelling:</strong> Labels employees who are either old or expensive or both.</li>
+        </ul>
+        <p><strong style="color: black;">Results from employee_labelling:</strong></p>
+        <ul>
+          <li>Leslie Knope and Chris Traeger are tagged as both “expensive” and “OLD”,</li>
+          <li>Employees labeled as “expensive” (e.g., Ben Wyatt, Chris Traeger, Leslie Knope, Ron Swanson) are typically senior professionals. This indicates a potential area for reviewing budget allocation, especially if salary levels don’t correlate with output or department performance.</li>
+          <li>a group of younger high earners who may still be developing or growing in their roles. The company should evaluate performance metrics to ensure these salaries are justified.</li>
+          <li>Multiple employees (e.g., Jerry Gergich, Chris Traeger, Leslie Knope, Donna Meagle) are labeled as “OLD MAN” or “OLD lady”. This signals a need to plan for succession, skill transfer, and possibly upcoming retirements in essential departments like Parks and Recreation and Public Works.</li>
+        </ul>
+
+        <ul>
+          <li><strong style="color: black;">employee_salaries_bonuses:</strong> Contains Calculated salary and bonus for the employees.</li>
+        </ul>
+        <p><strong style="color: black;">Results from employee_salary:</strong></p>
+        <ul>
+          <li>High earners mostly belong to Parks and Recreation and Public Works.</li>
+          <li>Ben Wyatt, from Finance, has a high salary and receives a significant bonus of $7,000.</li>
+          <li> both female employees in Parks and Recreation, hold ranks 1 and 2 respectively, indicating higher income rank among females.</li>
+          <li>Salary distribution shows a cluster at the $50,000 mark.</li>
+        </ul>
+
+        <ul>
+          <li><strong style="color: black;">age_and_salary:</strong> Maps Age and Salary of the employees who are older and earns high.</li>
+        </ul>
+        <p><strong style="color: black;">Results from age_and_salary:</strong></p>
+        <ul>
+          <li>Jerry Gergich is the oldest employee at 61 years and earns $50,000, which is lower compared to Leslie and Donna.</li>
+          <li>Leslie Knope is the highest-paid among these three with a salary of $75,000 at age 44.</li>
+          <li>Salary spread shows a gap of $25,000 between Jerry and Leslie, reflecting different roles or seniority within the department.</li>
+          <li>gender pay balance in favor of females</li>
+        </ul>
+
+        <h2>Key Results & Insights</h2>
+        <ul>
+          <li>Used <strong>DENSE_RANK()</strong> to rank employees by salary within gender groups.</li>
+          <li>Applied dynamic raises (5% or 2.5%) based on salary thresholds.</li>
+          <li>Classified employees into <em>low</em>, <em>okay</em>, or <em>high</em> paid categories.</li>
+          <li>Finance department members received a 10% bonus.</li>
+          <li>Custom filters extracted males over 45 and females over 40 with significant pay.</li>
+          <li>Combined multiple filters to label employees as "expensive", "OLD MAN", or "OLD lady".</li>
+        </ul>
+
+        <h2>Project Downloads</h2>
+        <div class="download-buttons">
+          <a class="btn-link" href="Park&Recreation Main data.sql" download>📥 Main Data Schema</a>
+          <a class="btn-link" href="Park&Recreation.sql" download>📥 Salary & Stats Logic</a>
+          <a class="btn-link" href="park&recreation 2.sql" download>📥 Age & Salary Query</a>
+          <a class="btn-link" href="park&recreation 3.sql" download>📥 Labeling Logic</a>
+        </div>
+
+        <a href="https://github.com/Souranil-Biswas/Parks-Recreation-sql" target="_blank" class="github-link">🔗 View Full Project on GitHub</a>
+      </div>
+
+      <div class="image-content">
+        <h2 class="ss-heading">Screenshots</h2>
+        <div class="ss-grid vertical">
+          
+          <img src="Screenshot 2025-04-30 014502.png" alt=" Screenshot 2" class="tall-img" />
+          <img src="Screenshot 2025-04-30 015235.png" alt=" Screenshot 3" class="tall-img" />
+          <img src="Screenshot 2025-04-30 015317.png" alt=" Screenshot 4" class="tall-img" />
+          <img src="Screenshot 2025-04-30 110435.png" alt=" Screenshot 5" class="tall-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Souranil Biswas | <a href="https://www.linkedin.com/in/souranil-biswas-0a52a6343" target="_blank" class="linkedin">LinkedIn</a></p>
+  </footer>
+</body>
+</html>
